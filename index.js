@@ -8,6 +8,8 @@ const connectDB = require('./config/db');
 connectDB();
 app.use(cors());
 app.use('/users', routes);
-
+app.get('/', (req, res) => {
+  res.send('Welcome!!, Go to /users');
+});
 app.use(express.json());
 app.listen(process.env.PORT || 3000, () => console.log('Server connected'));
