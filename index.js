@@ -8,7 +8,7 @@ const connectDB = require('./config/db');
 connectDB();
 app.use(cors());
 app.use('/users', routes);
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.send('Welcome!!, Go to /users');
 });
 app.use(express.json());
