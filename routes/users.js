@@ -7,7 +7,7 @@ const userModel = mongoose.model(
 );
 
 routes.get('/', async (req, res) => {
-  const users = await userModel.find();
+  const users = await userModel.find().select('-password');
   res.send(users);
 });
 
